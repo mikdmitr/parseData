@@ -1,0 +1,99 @@
+      *---------------------------------------------------------------*                                                              
+      *                    LAYOUT FOR TEST -->                        *                                                              
+      *LAYOUT FOR MULTI-ROW TABLES                                    *                                                              
+      *                                                               *                                                              
+      *---------------------------------------------------------------*                                                              
+      * MAINTENANCE LOG:                                              *                                                              
+      *---------------------------------------------------------------*                                                              
+                                                                                                                                     
+       01 TESTMUL-RECORD.                                                                                                            
+          05 TESTMUL-SEC-NBR                   PIC X(07).                                                                            
+          05 TESTMUL-SEQ-NUM                   PIC 9(04).                                                                            
+          05 TESTMUL-TABLE                     PIC X(08).                                                                            
+          05 TESTMUL-DATA-AREA                 PIC X(7800).                                                                          
+          05 TESTMUL-VBNDFTRV REDEFINES TESTMUL-DATA-AREA.                                                                           
+             10 VBNDFTRV-DATA OCCURS 169 TIMES INDEXED BY VBNDFTRV-SUB.                                                               
+                15 VBNDFTRV-RATE-BOND-DT       PIC X(10).                                                                            
+                15 VBNDFTRV-BOND-RT            PIC S9(15)V9(10).                                                                     
+                15 VBNDFTRV-TYPE-PUT-NI        PIC X(01).                                                                            
+                15 VBNDFTRV-TYPE-PUT-CD        PIC X(01).                                                                            
+                15 VBNDFTRV-TYPE-RATE-CD       PIC X(02).                                                                            
+                15 VBNDFTRV-FEATURE-FRQNC-NI   PIC X(01).                                                                            
+                15 VBNDFTRV-FEATURE-FRQNC-CD   PIC X(02).                                                                            
+                15 VBNDFTRV-RDMPT-PARTIAL-NI   PIC X(01).                                                                            
+                15 VBNDFTRV-RDMPT-PARTIAL-CD   PIC X(02).                                                                            
+                15 VBNDFTRV-CALL-RATE-TYPE-CD  PIC X(01).                                                                            
+             10 FILLER                         PIC X(26).                                                                            
+          05 TESTMUL-VTSTXRFK REDEFINES TESTMUL-DATA-AREA.                                                                           
+             10 VTSTXRFK-DATA OCCURS 557 TIMES INDEXED BY VTSTXRFK-SUB.                                                              
+                15 VTSTXRFK-CROSS-REFERENCE-CD PIC X(12).                                                                            
+                15 VTSTXRFK-TYPE-XREF-CD       PIC X(02).                                                                            
+             10 FILLER                         PIC X(02).                                                                            
+          05 TESTMUL-VINCMDT REDEFINES TESTMUL-DATA-AREA.                                                                            
+             10 VINCMDT-DATA OCCURS 156 TIMES INDEXED BY VINCMDT-SUB.                                                                
+                15 VINCMDT-RECORD-DT           PIC X(10).                                                                            
+                15 VINCMDT-TYPE-INCOME-CD      PIC X(02).                                                                            
+                15 VINCMDT-EXDIVIDEND-NI       PIC X(01).                                                                            
+                15 VINCMDT-EXDIVIDEND-DT       PIC X(10).                                                                            
+                15 VINCMDT-DIVIDEND-RT         PIC S9(15)V9(10).                                                                     
+                15 VINCMDT-DAY-TKFF-GNRT-QTY   PIC S9(1).                                                                            
+                15 VINCMDT-PAY-FRCTN-SHR-IND   PIC X(01).                                                                            
+          05 TESTMUL-VDPSTYEL REDEFINES TESTMUL-DATA-AREA.                                                                           
+             10 VDPSTYEL-DATA OCCURS 1300 TIMES INDEXED BY VDPSTYEL-SUB.                                                             
+                15 VDPSTYEL-DEPOSITORY-CD      PIC X(04).                                                                            
+                15 VDPSTYEL-PORTAL-IND         PIC X(01).                                                                            
+                15 VDPSTYEL-FUND-FED-IND       PIC X(01).                                                                            
+          05 TESTMUL-VSECDESC REDEFINES TESTMUL-DATA-AREA.                                                                           
+             10 VSECDESC-DATA OCCURS 229 TIMES INDEXED BY VSECDESC-SUB.                                                              
+                15 VSECDESC-ROW-NBR            PIC S9(4).                                                                            
+                15 VSECDESC-DESC-SEC-TXT       PIC X(30).                                                                            
+             10 FILLER                         PIC X(14).                                                                            
+          05 TESTMUL-VFCTRRTD REDEFINES TESTMUL-DATA-AREA.                                                                           
+             10 VFCTRRTD-DATA OCCURS 222 TIMES INDEXED BY VFCTRRTD-SUB.                                                              
+                15 VFCTRRTD-FACTOR-BOND-RT     PIC S9(15)V9(10).                                                                     
+                15 VFCTRRTD-FACTOR-PAY-DT      PIC X(10).                                                                            
+             10 FILLER                         PIC X(30).                                                                            
+          05 TESTMUL-VSECRTDT REDEFINES TESTMUL-DATA-AREA.                                                                           
+             10 VSECRTDT-DATA OCCURS 780 TIMES INDEXED BY VSECRTDT-SUB.                                                              
+                15 VSECRTDT-RATING-CD          PIC X(05).                                                                            
+                15 VSECRTDT-VENDOR-CD          PIC X(05).                                                                            
+          05 TESTMUL-VSCRFRG  REDEFINES TESTMUL-DATA-AREA.                                                                           
+             10 VSCRFRG-DATA OCCURS 866 TIMES INDEXED BY VSCRFRG-SUB.                                                                
+                15 VSCRFRG-SCRTY-ADP-XREF-NBR  PIC X(07).                                                                            
+                15 VSCRFRG-RGSTR-BOND-CD       PIC X(02).                                                                            
+             10 FILLER                         PIC X(06).                                                                            
+          05 TESTMUL-TSTBOFV  REDEFINES TESTMUL-DATA-AREA.                                                                           
+      *** OVERLAY DATA FOR VBNDFTRV (CALL FEATURE DATA)                                                                              
+             10 TSTBOFV-DATA OCCURS 156 TIMES INDEXED BY TSTBOFV-SUB.                                                                
+                15 TSTBOFV-CLIENT-MSTR-NBR     PIC X(04).                                                                            
+                15 TSTBOFV-TYPE-RATE-CD        PIC X(02).                                                                            
+                15 TSTBOFV-RATE-BOND-DT        PIC X(10).                                                                            
+                15 TSTBOFV-BOND-RT             PIC S9(15)V9(10).                                                                     
+                15 TSTBOFV-TYPE-PUT-NI         PIC X(01).                                                                            
+                15 TSTBOFV-TYPE-PUT-CD         PIC X(01).                                                                            
+                15 TSTBOFV-FEATURE-FRQNC-NI    PIC X(01).                                                                            
+                15 TSTBOFV-FEATURE-FRQNC-CD    PIC X(02).                                                                            
+                15 TSTBOFV-RDMPT-PARTIAL-NI    PIC X(01).                                                                            
+                15 TSTBOFV-RDMPT-PARTIAL-CD    PIC X(02).                                                                            
+                15 TSTBOFV-CALL-RATE-TYPE-CD   PIC X(01).                                                                            
+          05 TESTMUL-TSTBOCD  REDEFINES TESTMUL-DATA-AREA.                                                                           
+      *** OVERLAY DATA FOR VBNDCLDT (CALL SCHEDULE DATA)                                                                             
+             10 TSTBOCD-DATA OCCURS 200 TIMES INDEXED BY TSTBOCD-SUB.                                                                
+                15 TSTBOCD-CLIENT-MSTR-NBR     PIC X(04).                                                                            
+                15 TSTBOCD-CALL-SCHDL-DT       PIC X(10).                                                                            
+                15 TSTBOCD-CALL-SCHDL-AMT      PIC S9(15)V9(10).                                                                     
+          05 TESTMUL-TSTPOIN  REDEFINES TESTMUL-DATA-AREA.                                                                           
+      *** OVERLAY DATA FOR TSTPOIN  (INTEREST PAY DATA FOR NON-BOND SEC)                                                             
+             10 TSTPOIN-DATA OCCURS 251 TIMES INDEXED BY TSTPOIN-SUB.                                                                
+                15 TSTPOIN-CLIENT-MSTR-NBR     PIC X(04).                                                                            
+                15 TSTPOIN-NMNL-AMT            PIC S9(15)V9(10).                                                                     
+                15 TSTPOIN-NMNL-MRKR-CD        PIC X(02).                                                                            
+             10 FILLER                         PIC X(19).                                                                            
+          05 TESTMUL-TSTMNGD  REDEFINES TESTMUL-DATA-AREA.                                                                           
+      *** MANAGED ACCOUNT DATA                                                                                                       
+             10 TSTMNGD-DATA OCCURS 709 TIMES INDEXED BY TSTMNGD-SUB.                                                                
+                15 TSTMNGD-CLIENT-NBR          PIC X(04).                                                                            
+                15 TSTMNGD-AST-CLSS-NBR        PIC X(05).                                                                            
+                15 TSTMNGD-CLLBL-PTBL-CD       PIC X(01).                                                                            
+                15 TSTMNGD-PARENT-IND          PIC X(01).                                                                            
+             10 FILLER                         PIC X(01).                                                                            

@@ -1,0 +1,20 @@
+      *---------------------------------------------------------------*                                                              
+      *LAYOUT FOR SINGLE-ROW TABLES                                   *                                                              
+      *                                                               *                                                              
+      *---------------------------------------------------------------*                                                              
+      * MAINTENANCE LOG:                                              *                                                              
+      *---------------------------------------------------------------*                                                              
+                                                                                                                                     
+       01 TESTSNL-RECORD.                                                                                                            
+          05 TESTSNL-SEC-NBR                   PIC X(07).                                                                            
+          05 TESTSNL-VMSTRANB.                                                                                                       
+             10 ADDED-TMSTP                    PIC X(26).                                                                            
+             10 DO-NOT-USE-DT-NI               PIC X(01) VALUE 'Y'.                                                                  
+             10 DO-NOT-USE-DT                  PIC X(10).                                                                            
+             10 SECURITY-IDA-CD                PIC X(04).                                                                            
+             10 TYPE-SECURITY-CD               PIC X(03).                                                                            
+             10 CNTRY-ISSUE-CD                 PIC X(02).                                                                            
+             10 CNTRY-ORGN-CD                  PIC X(02).                                                                            
+             10 DESC-SEC-TXT                   PIC X(30).                                                                            
+             10 CLIENT-NBR-NI                  PIC X(01) VALUE 'Y'.                                                                  
+             10 CLIENT-NBR                     PIC X(04).                                                                            
